@@ -11,13 +11,28 @@ namespace eikannata
     {
         static void Main(string[] args)
         {
+            DirectoryInfo d = new DirectoryInfo(@"\Markmed"); //Your Folder
+            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
+            Console.WriteLine("Files in folder: ");
+            foreach (FileInfo file in Files)
+            {
+                Console.WriteLine(file.Name);
+            }
+
+            Console.WriteLine("Which file you do want to select?");
+            var filename = Console.ReadLine();
+            Console.WriteLine("Whaddya wanna do? (read/write/new file)");
+            var choice = Console.ReadLine();
+
+            if (choice == "read")
+	        {
             try
             {   
                 // Open the text file using a stream reader.
-                string[] lines = System.IO.File.ReadAllLines(@"C:\Markmed");
+                string[] lines = System.IO.File.ReadAllLines(@"C:\Markmed\" + filename);
 
                 // Display the file contents by using a foreach loop.
-                System.Console.WriteLine("Contents of WriteLines2.txt = ");
+                System.Console.WriteLine("Opening " + filename);
                 foreach (string line in lines)
                 {
                     // Use a tab to indent each line of the file.
@@ -33,17 +48,12 @@ namespace eikannata
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
-
-
-            DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
-            foreach (FileInfo file in Files)
-            {
-                Console.WriteLine(file.Name);
-            
-
             }
-            Console.ReadLine();
-        }
-    }
+            
+            else if (choice == "write")
+            {
+            
+}
+}
+}
 }
