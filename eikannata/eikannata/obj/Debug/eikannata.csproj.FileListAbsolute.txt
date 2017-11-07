@@ -1,0 +1,6 @@
+C:\Users\opilane\Documents\GitHub\markmik\eikannata\eikannata\obj\Debug\eikannata.csprojResolveAssemblyReference.cache
+C:\Users\opilane\Documents\GitHub\markmik\eikannata\eikannata\bin\Debug\eikannata.exe.config
+C:\Users\opilane\Documents\GitHub\markmik\eikannata\eikannata\bin\Debug\eikannata.exe
+C:\Users\opilane\Documents\GitHub\markmik\eikannata\eikannata\bin\Debug\eikannata.pdb
+C:\Users\opilane\Documents\GitHub\markmik\eikannata\eikannata\obj\Debug\eikannata.exe
+C:\Users\opilane\Documents\GitHub\markmik\eikannata\eikannata\obj\Debug\eikannata.pdb
