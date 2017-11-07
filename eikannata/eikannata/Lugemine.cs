@@ -7,24 +7,13 @@ using System.Threading.Tasks;
 
 namespace eikannata
 {
-    class Program
+    class Lugemine
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Read or write files? (Read/Write)");
-            string choice = (Console.ReadLine());
-            choice = choice.ToLower();
-            Console.WriteLine(choice);
-            if (choice == "read")
-            {
-                Console.WriteLine("What's the filename?");
-            }
-
-
-            
             try
             {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader("Note.txt"))
+                using (StreamReader sr = new StreamReader("TestFile.txt"))
                 {
                     // Read the stream to a string, and write the string to the console.
                     String line = sr.ReadToEnd();
@@ -33,10 +22,10 @@ namespace eikannata
             }
             catch (Exception e)
             {
-                Console.WriteLine("Midagi on mädaaaaaaaa:");
+                Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
-
         }
     }
 }
+
