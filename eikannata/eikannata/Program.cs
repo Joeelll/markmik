@@ -27,15 +27,22 @@ namespace eikannata
 
             }
 
-            Console.WriteLine("");
+            Console.WriteLine("Mida soovite teha? (New/Read/Delete)");
 
-            DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
-            string str = "";
-            foreach (FileInfo file in Files)
+            string vastus = Console.ReadLine();
+
+            if (vastus == "Read")
             {
-                Console.WriteLine(file.Name);
+                Console.WriteLine("Failid:");
+
+                DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
+                FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
+                foreach (FileInfo file in Files)
+                {
+                    Console.WriteLine(file.Name);
+                }
             }
+
         }
     }
 }
