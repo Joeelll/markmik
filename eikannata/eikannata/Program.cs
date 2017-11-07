@@ -11,17 +11,6 @@ namespace eikannata
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Read or write files? (Read/Write)");
-            string choice = (Console.ReadLine());
-            choice = choice.ToLower();
-            Console.WriteLine(choice);
-            if (choice == "read")
-            {
-                Console.WriteLine("What's the filename?");
-            }
-
-
-            
             try
             {   // Open the text file using a stream reader.
                 using (StreamReader sr = new StreamReader("Note.txt"))
@@ -33,10 +22,10 @@ namespace eikannata
             }
             catch (Exception e)
             {
-                Console.WriteLine("Midagi on mädaaaaaaaa:");
+                Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
-            }
 
+            }
         }
     }
 }
