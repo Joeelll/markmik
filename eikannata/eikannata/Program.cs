@@ -11,25 +11,7 @@ namespace eikannata
     {
         static void Main(string[] args)
         {
-            try
-            {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader("Note.txt"))
-                {
-                    // Read the stream to a string, and write the string to the console.
-                    String line = sr.ReadToEnd();
-                    Console.WriteLine(line);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
-<<<<<<< HEAD
-
-            }
-<<<<<<< HEAD
-
-            Console.WriteLine("");
+            Console.WriteLine("whaddya wanna do? (read/write)");
 
             DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
             FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
@@ -37,21 +19,43 @@ namespace eikannata
             foreach (FileInfo file in Files)
             {
                 Console.WriteLine(file.Name);
-<<<<<<< HEAD
-            }
-<<<<<<< HEAD
 
-=======
-=======
+            }
+            try
+
+
+
+            {   
+                // Open the text file using a stream reader.
+                string[] lines = System.IO.File.ReadAllLines(@"C:\Markemd");
+
+                // Display the file contents by using a foreach loop.
+                System.Console.WriteLine("Contents of WriteLines2.txt = ");
+                foreach (string line in lines)
+                {
+                    // Use a tab to indent each line of the file.
+                    Console.WriteLine("\t" + line);
+                }
+
+                // Keep the console window open in debug mode.
+                Console.WriteLine("Press any key to exit.");
+                System.Console.ReadKey();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
             }
 
->>>>>>> parent of 30e9259... Merge branch 'master' of https://github.com/Joeelll/markmik
->>>>>>> 1996f41e494aa2afaa4151c39eaf4e1df5f1834b
-=======
->>>>>>> parent of 85327b1... re
-=======
+
+            DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
+            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
+            string str = "";
+            foreach (FileInfo file in Files)
+            {
+                Console.WriteLine(file.Name);
+
             }
->>>>>>> parent of 85327b1... re
         }
     }
 }
