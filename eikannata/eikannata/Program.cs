@@ -26,6 +26,16 @@ namespace eikannata
                 Console.WriteLine(e.Message);
 
             }
+
+            Console.WriteLine("");
+
+            DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
+            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
+            string str = "";
+            foreach (FileInfo file in Files)
+            {
+                Console.WriteLine(file.Name);
+            }
         }
     }
 }
