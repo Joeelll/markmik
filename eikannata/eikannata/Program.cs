@@ -29,21 +29,16 @@ namespace eikannata
             }
 <<<<<<< HEAD
 
-            Console.WriteLine("Mida soovite teha? (New/Read/Delete)");
+            Console.WriteLine("");
 
-            string vastus = Console.ReadLine();
-
-            if (vastus == "Read")
+            DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
+            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
+            string str = "";
+            foreach (FileInfo file in Files)
             {
-                Console.WriteLine("Failid:");
-
-                DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
-                FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
-                foreach (FileInfo file in Files)
-                {
-                    Console.WriteLine(file.Name);
-                }
+                Console.WriteLine(file.Name);
             }
+<<<<<<< HEAD
 
 =======
 =======
@@ -51,6 +46,8 @@ namespace eikannata
 
 >>>>>>> parent of 30e9259... Merge branch 'master' of https://github.com/Joeelll/markmik
 >>>>>>> 1996f41e494aa2afaa4151c39eaf4e1df5f1834b
+=======
+>>>>>>> parent of 85327b1... re
         }
     }
 }

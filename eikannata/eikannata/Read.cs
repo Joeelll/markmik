@@ -8,6 +8,5 @@ namespace eikannata
 {
     class Read
     {
-
-    }      
+    }
 }
