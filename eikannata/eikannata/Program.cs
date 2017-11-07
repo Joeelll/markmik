@@ -11,23 +11,10 @@ namespace eikannata
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("whaddya wanna do? (read/write)");
-
-            DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
-            string str = "";
-            foreach (FileInfo file in Files)
-            {
-                Console.WriteLine(file.Name);
-
-            }
             try
-
-
-
             {   
                 // Open the text file using a stream reader.
-                string[] lines = System.IO.File.ReadAllLines(@"C:\Markemd");
+                string[] lines = System.IO.File.ReadAllLines(@"C:\Markmed");
 
                 // Display the file contents by using a foreach loop.
                 System.Console.WriteLine("Contents of WriteLines2.txt = ");
@@ -50,12 +37,13 @@ namespace eikannata
 
             DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
             FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
-            string str = "";
             foreach (FileInfo file in Files)
             {
                 Console.WriteLine(file.Name);
+            
 
             }
+            Console.ReadLine();
         }
     }
 }
