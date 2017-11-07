@@ -42,11 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Delete.cs" />
-    <Compile Include="New.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Lugemine.cs" />
+>>>>>>> parent of 30e9259... Merge branch 'master' of https://github.com/Joeelll/markmik
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Read.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
