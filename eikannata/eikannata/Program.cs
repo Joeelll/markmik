@@ -24,8 +24,13 @@ namespace eikannata
             {
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
+<<<<<<< HEAD
 
             }
+=======
+            }
+
+>>>>>>> parent of 30e9259... Merge branch 'master' of https://github.com/Joeelll/markmik
         }
     }
 }
