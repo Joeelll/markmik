@@ -19,10 +19,11 @@ namespace eikannata
                 Console.WriteLine(file.Name);
             }
 
+            Console.WriteLine("Whaddya wanna do? (read/write to/new file)");
+            var choice = Console.ReadLine();
             Console.WriteLine("Which file you do want to select?");
             var filename = Console.ReadLine();
-            Console.WriteLine("Whaddya wanna do? (read/write to/write new file)");
-            var choice = Console.ReadLine();
+            
 
             if (choice == "read")
             {
@@ -55,7 +56,6 @@ namespace eikannata
                 string path = @"c:\Markmed\" + filename;
                 using (StreamWriter sw = File.AppendText(path))
                 {
-                    sw.WriteLine("\n");
                     sw.WriteLine("--New writing session started--");
                     sw.WriteLine("\n");
                     Console.WriteLine("Start typing, press enter when done");
@@ -71,6 +71,17 @@ namespace eikannata
                     {
                         Console.WriteLine(s);
                     }
+                }
+            }
+
+            else if (choice == "new file")
+            {
+                string path = @"c:\Markmed\" + filename;
+                if (!File.Exists(path))
+                {
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(path)) ;
+                    Console.WriteLine("File " + filename + " created");
                 }
             }
         }
