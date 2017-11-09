@@ -9,6 +9,8 @@ namespace eikannata
 {
     class Program
     {
+        private static int i;
+
         static void Main(string[] args)
         {
             string folderpath = @"c:\Markmed";
@@ -18,7 +20,7 @@ namespace eikannata
                 // Determine whether the directory exists.
                 if (Directory.Exists(folderpath))
                 {
-                    Console.WriteLine("Folder Markmed found ");                    
+                    Console.WriteLine("Folder 'Markmed found ");                    
                 }
                 else
                 {
@@ -42,10 +44,19 @@ namespace eikannata
                     Console.WriteLine(file.Name);
                 }
 
-                Console.WriteLine("Select operation (new/read/delete)");
-                var choice = Console.ReadLine();
+            while (i == 0)
+            {
+
                 Console.WriteLine("What's the filename?");
                 var filename = Console.ReadLine();
+                string curFile = @"c:\Markmed\" + filename;
+                Console.WriteLine(File.Exists(curFile) ? "File exists." : "File does not exist.");
+
+
+
+                Console.WriteLine("Select operation (new/read/delete)");
+                var choice = Console.ReadLine();
+                
 
 
                 if (choice == "read")
@@ -93,8 +104,10 @@ namespace eikannata
                 }
                 else
                 {
-                Console.WriteLine("Operation not present, try again");
+                    Console.WriteLine("Try again");
+                    int i = 1;
                 }
+            }
         }
     }
 }
