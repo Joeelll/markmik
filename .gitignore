@@ -303,3 +303,10 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+*.exe
+*.pdb
+*.sqlite
+*.pdb
+*.cache
+*.pdb
+eikannata/eikannata/obj/Debug/eikannata.pdb

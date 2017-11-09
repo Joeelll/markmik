@@ -18,13 +18,13 @@ namespace eikannata
                 // Determine whether the directory exists.
                 if (Directory.Exists(folderpath))
                 {
-                    Console.WriteLine("Filepath found");                    
+                    Console.WriteLine("Folder Markmed found ");                    
                 }
                 else
                 {
                     // Try to create the directory.
                     DirectoryInfo di = Directory.CreateDirectory(folderpath);
-                    Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(folderpath));
+                    Console.WriteLine("Folder 'Markmed' was created successfully at {0}.", Directory.GetCreationTime(folderpath));
                 }
             }
             catch (Exception e)
