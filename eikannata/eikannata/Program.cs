@@ -26,15 +26,33 @@ namespace eikannata
                 Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine("");
+
+            Console.WriteLine("Praegused märkmed on: ");
 
             DirectoryInfo d = new DirectoryInfo(@"C:\markmed");//Assuming Test is your Folder
             FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
-            string str = "";
             foreach (FileInfo file in Files)
             {
                 Console.WriteLine(file.Name);
             }
+
+            Console.WriteLine("Mida te soovite teha? (New/Read/Delete)");
+            string vastus = Console.ReadLine();
+
+            if (vastus == "New")
+            {
+
+            }
+
+            if (vastus == "Read")
+            {
+            }
+
+            if (vastus == "Delete")
+            {
+
+            }
+
         }
           
     }
