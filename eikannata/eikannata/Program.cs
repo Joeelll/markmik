@@ -35,7 +35,7 @@ namespace eikannata
             }
             
 
-
+            Files:
             DirectoryInfo d = new DirectoryInfo(@"\Markmed"); //Your Folder
                 FileInfo[] Files = d.GetFiles("*.txt"); //Getting Text files
                 Console.WriteLine("Files in folder: ");
@@ -44,21 +44,33 @@ namespace eikannata
                     Console.WriteLine(file.Name);
                 }
 
-            while (i == 0)
-            {
-
-                Console.WriteLine("What's the filename?");
-                var filename = Console.ReadLine();
-                string curFile = @"c:\Markmed\" + filename;
-                Console.WriteLine(File.Exists(curFile) ? "File exists." : "File does not exist.");
-
 
 
                 Console.WriteLine("Select operation (new/read/delete)");
                 var choice = Console.ReadLine();
+
+
+                Console.WriteLine("Enter filename: ");
+                var filename = Console.ReadLine();
+                string curFile = @"c:\Markmed\" + filename;
+                if (File.Exists(curFile))
+                {
+                    Console.WriteLine("File found." + "\n");
+                }
+
+                else
+                {
+                    if (choice == "delete")
+                    {
+
+                        Console.WriteLine("File does not exist." + "\n");
+                        goto Files;
+
+                    }
+                }
                 
 
-
+                /////////
                 if (choice == "read")
                 {
                     try
@@ -67,7 +79,7 @@ namespace eikannata
                         string[] lines = System.IO.File.ReadAllLines(@"C:\Markmed\" + filename);
 
                         // Display the file contents by using a foreach loop.
-                        System.Console.WriteLine("Opening " + filename);
+                        System.Console.WriteLine("Opening " + filename + ": \n");
                         foreach (string line in lines)
                         {
                             // Use a tab to indent each line of the file.
@@ -102,6 +114,13 @@ namespace eikannata
                         sw.WriteLine(WritingSession);
                     }
                 }
+
+                else if (choice == "delete")
+                {
+                    File.Delete(@"C:\Markmed\" + filename);
+                    Console.WriteLine("File " + filename + " deleted");
+                }
+
                 else
                 {
                     Console.WriteLine("Try again");
@@ -110,6 +129,6 @@ namespace eikannata
             }
         }
     }
-}
+
 
 
