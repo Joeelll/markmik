@@ -48,7 +48,10 @@ namespace eikannata
 
                 Console.WriteLine("Select operation (new/read/delete)");
                 var choice = Console.ReadLine();
-
+            if (choice == "quit" || choice == "exit")
+            {
+                goto Exit;
+            }
 
                 Console.WriteLine("Enter filename: ");
                 var filename = Console.ReadLine();
@@ -124,8 +127,9 @@ namespace eikannata
                 else
                 {
                     Console.WriteLine("Try again");
-                    int i = 1;
                 }
+                Exit:
+            Console.WriteLine("Exiting");
             }
         }
     }
